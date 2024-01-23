@@ -28,3 +28,4 @@
 /Users/robertopiranamedi/Desktop/Moment1/obj/Debug/net8.0/Moment1.pdb
 /Users/robertopiranamedi/Desktop/Moment1/obj/Debug/net8.0/Moment1.genruntimeconfig.cache
 /Users/robertopiranamedi/Desktop/Moment1/obj/Debug/net8.0/ref/Moment1.dll
+/Users/robertopiranamedi/Desktop/Moment1/obj/Debug/net8.0/Moment1.sourcelink.json
