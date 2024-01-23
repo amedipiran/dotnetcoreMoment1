@@ -13,7 +13,7 @@ namespace Moment1.Pages
         public void OnGet()
         {
             // Lista med kurser
-            Courses = new List<string> { "dt057g, Webbutveckling I", "annanKurs, Kursnamn" };
+            Courses = new List<string> { "DT057G, Webbutveckling I", "annanKurs, Kursnamn" };
 
             // Aktuellt datum och tid
             Nu = DateTime.Now;
