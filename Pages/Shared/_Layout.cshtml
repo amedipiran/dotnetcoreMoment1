@@ -9,43 +9,75 @@
     <link rel="stylesheet" href="~/Moment1.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
+   <header>
+        <!-- Navigeringsfält för alla skärmstorlekar -->
+        <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between">
+                <!-- Logga-->
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Moment1</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+
+
+                <div class="d-none d-md-block">
+                    <span class="navbar-text">
+                        <strong>Dagens datum: </strong>@DateTime.Now.ToString("yyyy-MM-dd")
+                    </span>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Hem</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Courses">Kurser</a>
-                        </li>
-                    </ul>
-                    <div class="d-flex">
-                        <span class="navbar-text">
-                            <strong>Dagens datum: </strong>@DateTime.Now.ToString("yyyy-MM-dd")
-                        </span>
-                    </div>
-                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <!-- Navigationslänkar för mindre skärmar -->
+                <ul class="navbar-nav p-3 me-auto mb-2 mb-md-0 d-md-none">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Hem</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Razor">Razor</a>
+                    </li>
+                       <li class="text-center mt-3">      <strong>Dagens datum: </strong>@DateTime.Now.ToString("yyyy-MM-dd")</li>
+                </ul>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar för större skärmar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="sidebar-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item button">
+                            <a class="nav-link " asp-area="" asp-page="/Index">Hem</a>
+                        </li>
+                        <li class="nav-item button">
+                            <a class="nav-link " asp-area="" asp-page="/Razor">Razor</a>
+                        </li>
+                     
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Huvudinnehåll -->
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Moment1 - Roberto Piran Amedi.
-        </div>
-    </footer>
+<div class="d-flex justify-content-center align-items-center">
+
+  <footer class="border-top footer text-center">
+    <div class="container">
+        Av: Roberto Piran Amedi - Kontakta mig via epost: <a href="mailto:roam2200@student.miun.se">roam2200@student.miun.se</a>
+    </div>
+</footer>
+</div>
+
+
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
